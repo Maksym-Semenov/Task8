@@ -16,9 +16,17 @@ namespace Task8
             Console.WriteLine($"Staff's name is {Name}, position is {Position}");
         }
 
-        public int CompareTo(Staff other)
+        public int CompareTo(Staff staff)
         {
-            throw new NotImplementedException();
+            Staff d = staff as Developer;
+            Staff t = staff as Teacher;
+            if (d != null && t != null)
+            {
+                return this.Age.CompareTo(d.Age);
+                return this.Age.CompareTo(t.Age);
+            }
+            throw new Exception("Uncorrect staff value!");
         }
+        
     }
 }
